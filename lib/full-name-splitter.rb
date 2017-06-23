@@ -16,7 +16,7 @@ module FullNameSplitter
     def split!
       @units = @full_name.split(/\s+/)
       while @unit = @units.shift do
-        if prefix? or with_apostrophe? or (first_name? and last_unit? and not initial?)
+        if prefix? or with_apostrophe? or (first_name? and last_unit?)
           if @first_name.empty?
             @first_name << @unit
           else
